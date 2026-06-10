@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+
+    public static String frequencySort(String s) {
+        HashMap<Character, Integer> freqMap = new HashMap<>();
+
+        
+        for (char ch : s.toCharArray()) {
+            freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
+        }
+
+        
+        List<Character> chars = new ArrayList<>(freqMap.keySet());
+       chars.sort((a, b) -> freqMap.get(b) - freqMap.get(a));
+
+        StringBuilder result = new StringBuilder();
+        for (char ch : chars) {
+            int count = freqMap.get(ch);
+            for (int i = 0; 
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
+    }
+
+    
