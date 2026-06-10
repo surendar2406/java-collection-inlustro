@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+
+    public static ArrayList<Integer> rotateRight(ArrayList<Integer> list, int k) {
+        int n = list.size();
+
+        if (n == 0) {
+            return list;
+        }
+
+        k = k % n; // Normalize k
+
+        ArrayList<Integer> result = new ArrayList<>();
+
+        // Add last k elements
+        result.addAll(list.subList(n - k, n));
+
+        // Add remaining elements
+        result.addAll(list.subList(0, n - k));
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>(
+                Arrays.asList(1, 2, 3, 4, 5));
+
+        int k = 2;
+
+        ArrayList<Integer> result = rotateRight(list, k);
+
+        System.out.println("Output: " + result);
+    }
+}
